@@ -1,0 +1,34 @@
+﻿<Window x:Class="choujo.SignUpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:choujo"
+        mc:Ignorable="d"
+        Title="Sign Up" Height="400" Width="300">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="34,54,34,21" Height="294">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="102*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="given_name" HorizontalAlignment="Left" Height="23" Margin="105,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="family_name" HorizontalAlignment="Left" Height="23" Margin="105,30,-2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="email" HorizontalAlignment="Left" Height="23" Margin="105,58,-2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="phone_number" HorizontalAlignment="Left" Height="23" Margin="105,86,-2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="password" HorizontalAlignment="Left" Height="23" Margin="105,114,-2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Label Content="Given Name*" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Height="23"/>
+        <Label Content="Family Name*" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Height="23"/>
+        <Label Content="Email*" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Height="23"/>
+        <Label Content="Phone Number" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Height="23"/>
+        <Label Content="Password*" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.202,-2.423" Height="23"/>
+        <CheckBox x:Name="phone_chkbx" Content="I wish to be alterted via SMS" HorizontalAlignment="Center" Margin="19,139,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="63,155,0,0" TextWrapping="Wrap" Text="Alert Notifications" VerticalAlignment="Top" RenderTransformOrigin="0.551,0.625" Grid.ColumnSpan="2" FontWeight="Bold"/>
+        <ComboBox x:Name="notification_dropdown" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="55,176,0,0" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="brisbane_chkbx" Content="Brisbane Bar" HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="southport_chkbx" Content="Southport" HorizontalAlignment="Left" Margin="10,223,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="mooloolaba_chkbx" Content="Mooloolaba" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.62,0.533" Height="16"/>
+        <Button x:Name="btn_submit" Content="Sign Up" HorizontalAlignment="Left" Margin="63,264,0,0" VerticalAlignment="Top" Width="74"
+                Click="btn_submit_Click" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>

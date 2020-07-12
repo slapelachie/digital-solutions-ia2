@@ -1,0 +1,24 @@
+﻿<Window x:Class="choujo.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:choujo"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="89,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260"><Run Text="Brisbane Bar (Whyte Island) "/><Run Text="Upcoming "/><Run Text="Forecast"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="89,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Current"/><Run Text=" Tid"/><Run Text="e"/><Run Text=" "/><Run Text="H"/><Run Text="eight"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="CurrentTideBox" HorizontalAlignment="Left" Margin="215,101,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Tag="" Width="204"/>
+        <TextBlock HorizontalAlignment="Left" Margin="89,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Current Alert Level:"/>
+        <TextBlock x:Name="AlertBox" HorizontalAlignment="Left" Margin="215,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Tag="" Width="204"/>
+        <TextBlock HorizontalAlignment="Left" Margin="89,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Next Low Tide Height:"/>
+        <TextBlock x:Name="NextLowTideBox" HorizontalAlignment="Left" Margin="215,140,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Tag="" Width="205"/>
+        <TextBlock HorizontalAlignment="Left" Margin="89,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Next High Tide Height:"/>
+        <TextBlock x:Name="NextHighTideBox" HorizontalAlignment="Left" Margin="215,160,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Tag="" Width="254"/>
+        <TextBlock HorizontalAlignment="Left" Margin="89,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Lowest Tide Height:"/>
+        <TextBlock x:Name="LowTideBox" HorizontalAlignment="Left" Margin="215,182,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Tag="" Width="205"/>
+        <TextBlock HorizontalAlignment="Left" Margin="89,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Highest Tide Height:"/>
+        <TextBlock x:Name="HighTideBox" HorizontalAlignment="Left" Margin="215,202,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Tag="" Width="255"/>
+    </Grid>
+</Window>
