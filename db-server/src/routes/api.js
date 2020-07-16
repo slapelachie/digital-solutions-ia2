@@ -1,14 +1,14 @@
 const Express = require('express')
 const path = require('path')
-const { getWaveData } = require('../database')
-const { normalize } = require('path')
 
 const { 
+	getWaveData,
 	getDateWaveDataSortHeight, 
 	getDateNextWaveDataSortHeight, 
 	getCurrentWaveData, 
 	createUser, 
 	checkUser,
+	getNotifiableUserData,
 } = require(path.join(globals.root_directory, 'src/database.js'))
 
 router = Express.Router()
@@ -44,8 +44,8 @@ router.get('/get', async (req, resp) => {
 })
 
 router.get('/test', (req, resp) => {
-	getNextMinMaxHeightFromThreshold('whyte_island').then(data => resp.send(data))
-		.catch(err => console.error(err))
+	getAlertRequiredUsers().then(user => console.log(user));
+	resp.send("fuck off")
 })
 
 router.post('/user/add', (req, resp) => {
@@ -152,6 +152,14 @@ function getBadCurrentDate() {
 	return getBadDate(date)
 }
 
+function getTideSiteNames(){
+	tide_sites = []
+	for(let site of globals.tide_links){
+		if(site.type=="live") tide_sites.push(site.name);
+	}
+	return tide_sites
+}
+
 function getMinMaxHeight(site_name){
 	return new Promise((resolve, reject) => {
 		current_date = getBadCurrentDate()
@@ -248,6 +256,38 @@ function getAlertLevel(site_name) {
 				}else{
 					resolve(0)
 				}
+			}).catch(err => reject(err))
+		}).catch(err => reject(err))
+	})
+}
+
+function getAlertRequiredUsers() {
+	return new Promise(async (resolve, reject) => {
+		alert_users = []
+		for(let site_name of getTideSiteNames()){
+			await getAlertRequiredUsersOfSite(site_name).then(user => {
+				alert_users.push(...user)
+			})
+		}
+		resolve(alert_users)
+	})
+}
+
+function getAlertRequiredUsersOfSite(site_name) {
+	return new Promise((resolve, reject) => {
+		users = []
+		getAlertLevel(site_name).then(alert_level => {
+			getNotifiableUserData().then(user_data => {
+				for(let user of user_data){
+					if(user[site_name] == 0) continue
+					users.push({
+						email: user.email,
+						phone_number: user.phone_number,
+						phone_notification: user.phone_notification,
+						site: site_name
+					})
+				}
+				resolve(users)
 			}).catch(err => reject(err))
 		}).catch(err => reject(err))
 	})

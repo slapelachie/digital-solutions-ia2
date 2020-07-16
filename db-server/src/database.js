@@ -193,6 +193,29 @@ module.exports.checkUser = function(user){
 	})
 }
 
+module.exports.getNotifiableUserData = function(){
+	return new Promise((resolve, reject) => {
+		sqlite.open({
+			filename: globals.database_directory,
+			driver: sqlite3.Database
+		}).then(database => {
+			database.all(`SELECT
+				u.email,
+				u.phone_number,
+				s.notification,
+				s.phone_notification,
+				s.whyte_island,
+				s.southport,
+				s.mooloolaba
+				FROM users AS u
+				INNER JOIN user_subscription AS s
+				WHERE s.notification > 0`).then(rows => {
+					resolve(rows)
+				}).catch(err => reject(err))
+		}).catch(err => reject(err))
+	})
+}
+
 function uuidv4() {
 	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
 		var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);

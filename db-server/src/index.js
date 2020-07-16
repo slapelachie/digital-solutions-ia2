@@ -16,26 +16,32 @@ global.globals.tide_links = [
 	{
 		name: "whyte_island",
 		url: "http://opendata.tmr.qld.gov.au/Whyte_Island.txt",
+		type: "live"
 	},
 	{
 		name: "whyte_island_pred",
 		url: "https://www.tmr.qld.gov.au/-/media/aboutus/corpinfo/Open%20data/predictiveintervaldata/Brisbane-Bar/P046046A_2020.csv",
+		type: "predicted"
 	},
 	{
 		name: "southport",
 		url: "http://opendata.tmr.qld.gov.au/southport.txt",
+		type: "live"
 	},
 	{
 		name: "southport_pred",
-		url: "https://www.tmr.qld.gov.au/-/media/aboutus/corpinfo/Open%20data/predictiveintervaldata/Southport/P100035_2020.csv"
+		url: "https://www.tmr.qld.gov.au/-/media/aboutus/corpinfo/Open%20data/predictiveintervaldata/Southport/P100035_2020.csv",
+		type: "predicted"
 	},
 	{
 		name: "mooloolaba",
-		url: "http://opendata.tmr.qld.gov.au/Mooloolaba.txt"
+		url: "http://opendata.tmr.qld.gov.au/Mooloolaba.txt",
+		type: "live"
 	},
 	{
 		name: "mooloolaba_pred",
-		url: "https://www.tmr.qld.gov.au/-/media/aboutus/corpinfo/Open%20data/predictiveintervaldata/Mooloolaba/P011008A_2020.csv"
+		url: "https://www.tmr.qld.gov.au/-/media/aboutus/corpinfo/Open%20data/predictiveintervaldata/Mooloolaba/P011008A_2020.csv",
+		type: "predicted"
 	}
 ]
 /*
