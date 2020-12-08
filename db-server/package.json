@@ -21,7 +21,7 @@
     "common": "^0.2.5",
     "debug": "^4.1.1",
     "express": "^4.17.1",
-    "fast-csv": "^4.3.1",
+    "fast-csv": "^4.3.6",
     "node-pre-gyp": "^0.15.0",
     "request": "^2.88.2",
     "sqlite": "^4.0.11",
